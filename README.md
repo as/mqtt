@@ -1,5 +1,5 @@
 # mqtt
-Toy implementation of mqtt to research how crufty protocols can be generated with wire9
+A prototype implementation of mqtt to research how crufty protocols can be generated with wire9
 
 # background
 Wire9 has its benefits
