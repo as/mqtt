@@ -42,9 +42,8 @@ But it has issues
  
  # Existential Values
   - Things like 
-    - "if this flag is this value, then this data will exist, otherwise, this next value exists... but only if this other flag is this value!"
-    - Personally, one of the most annoying things when implementing a protocol
-    - MQTT !
+    - "if this flag is this value, then this data will exist, otherwise, this next value exists... but only if this other flag is this value..."
+    - MQTT likes to do this
     
  # Fan-Out tables / Jump tables
   It seems every protocol designer has their own name for this. It's a table of offsets for specific data in a message.
