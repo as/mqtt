@@ -1,5 +1,5 @@
 # MQTT
-A prototype implementation of mqtt to research how crufty protocols can be generated with wire9
+A prototype implementation of mqtt to research how crufty protocols can be generated with wire9. I discourage the use of this package as a broker or client at this time, so here are some notes instead of documentation:
 
 # Background
 Wire9 (github.com/as/wire9)is a protocol generator created some years ago. It has its benefits:
