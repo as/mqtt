@@ -23,7 +23,7 @@ But it has issues
   - Varints 
   - Existential values
   - Fan-Out tables
-  - Bit Alligned values
+  - Bit Aligned values
   - Variable length headers
   - Computed Conformant Types
   - Musts, Mays, Shoulds
