@@ -86,8 +86,7 @@ But it has issues
     - This payload conforms to a value that is computed
     
 # Computed Conformant Types
- These are types that are described by a length
-  - Normal conformant types are normally described by a type whose value (usually) preceeds the conformant type
+  Normal conformant types are normally described by a type whose value (normally) preceeds the conformant type
   - But with computed conformant types
     - The length isn't concrete and needs to be computed
     - See computed offsets, except instead of a positional its a number that describes the width of a structure
