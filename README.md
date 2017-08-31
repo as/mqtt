@@ -1,25 +1,32 @@
-# mqtt
+# MQTT
 A prototype implementation of mqtt to research how crufty protocols can be generated with wire9
 
-# background
-Wire9 has its benefits
-- It can generate conformant recursive types
+# Background
+Wire9 (github.com/as/wire9)is a protocol generator created some years ago. It has its benefits:
+- Generates arbitrarily-nested conformant types
+- Based on a sucessful syntax (see draw(3) from plan9)
 - It is good at generating specific protocols
-  - Wire9 was designed because of Microsoft COM/DCOM
+  - Started because of Microsoft COM/DCOM
+  - Later used to implement draw(3)
 
 But it has issues
 - Riddled with bugs, but it's a custom lexer and parser so...
-- Beyond that, there are actual bugs (the hard bugs)
+- Beyond that, there are actual bugs (the hard ones)
 
 # The real issues
 - Real protocols are strange
-- Designed by creative people, but unlike elegancy, creativity sometimes invites complexity
+  - Not all data are big endian
+  - Not all data are alligned
+  - Not all data specifications make sense
+- Designed by creative people
+- Unlike elegane, unbounded creativity fosters complexity
   - Varints 
   - Existential values
   - Fan-Out tables
   - Bit Alligned values
   - Variable length headers
   - Computed Conformant Types
+  - Musts, Mays, Shoulds
   
 # Varints
  - Cut a number into 7 bit pieces
@@ -87,7 +94,33 @@ But it has issues
     - See computed offsets, except instead of a positional its a number that describes the width of a structure
     - But computation creates a functional dependency
     - Wire9 will not scan a packet twice on read or write; it is not a graph traverser;
-   
+
+# Musts, Mays, Shoulds
+>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
+
+The text above is from the commonly-mocked RFC 2119. But why do these phrases confuse?
+
+Each key word can be categorized into three buckets
+ - Affirmative: MUST, REQUIRED, SHOULD, SHALL
+ - Negative: MUST NOT, SHOULD NOT, SHALL NOT
+ - Uncertain: RECOMMENDED, MAY, OPTIONAL
+ 
+Of these, four key words have no inverse: REQUIRED, RECOMMENDED, MAY, OPTIONAL 
+
+ In some key words, the urgency depends on the context. But context sensitivity seems unconducive to a clear spec.
+
+ - You should stay away from those downed power lines
+ - You shall stay away from those downed power lines
+ - You must stay away from those downed power lines
+ 
+ Often, a negation is more serious
+ 
+ - You should not go near that lion
+ - You shall not go near that lion
+ - You must not go near that lion
+ 
+ Too many synonyms, too many options. Don't agree with my choice of buckets above? Well that's exactly my point. These words are unformalized.
+ 
 # MQTT
   - A rare protocol
    - Small but complex
