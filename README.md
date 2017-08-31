@@ -19,7 +19,7 @@ But it has issues
   - Not all data are alligned
   - Not all data specifications make sense
 - Designed by creative people
-- Unlike elegane, unbounded creativity fosters complexity
+- Unbounded creativity fosters complexity
   - Varints 
   - Existential values
   - Fan-Out tables
